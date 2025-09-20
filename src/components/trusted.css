@@ -1,0 +1,6 @@
+.trusted-inner{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.trusted-left .section-heading{margin-bottom:8px}
+.logos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;justify-items:center}
+.logos-grid img{width:120px;height:48px;object-fit:contain}
+@media (max-width:880px){ .trusted-inner{grid-template-columns:1fr} .logos-grid{grid-template-columns:repeat(2,1fr)} }
+

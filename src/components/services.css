@@ -1,0 +1,4 @@
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;align-items:start}
+.service-item{display:flex;gap:14px;align-items:flex-start}
+.svc-icon{width:56px;height:56px;object-fit:contain;border-radius:8px}
+
