@@ -1,9 +1,69 @@
-.approach-section .section-heading{font-size:1.6rem;margin-bottom:8px}
-.approach-cards{display:flex;gap:20px;align-items:center;margin-top:20px}
-.card-curved{background:#fff;border-radius:14px;padding:10px;display:flex;flex-direction:column;align-items:center;min-width:240px}
-.card-curved img{width:100%;height:140px;object-fit:cover;border-radius:10px}
-.card-circle{width:140px;height:140px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.card-circle img{width:100%;height:100%;object-fit:cover}
-.learn-more{display:inline-block;margin-top:16px;color:var(--ocean);font-weight:600}
-@media (max-width:880px){ .approach-cards{flex-direction:column} }
+.approach {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 7rem;
+}
+
+.approach-images {
+  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.approach-images img {
+  width: 30%;
+  height: 60px;
+  object-fit: cover;
+}
+
+.approach-images .rect {
+  border-radius: 5px;
+}
+
+.approach-images .circle {
+  grid-column: span 2;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  justify-self: center;
+  object-fit: cover;
+}
+
+.approach-heading {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.approach-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.approach-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.approach-link:hover {
+  border-bottom: 1px solid #000;
+  transform: translateX(4px);
+}
 

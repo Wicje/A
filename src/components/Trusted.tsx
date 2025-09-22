@@ -1,23 +1,24 @@
-"use client";
-import React from "react";
 import "./trusted.css";
 
-export default function Trusted(){
-  const logos = ["/images/logo-1.png","/images/logo-2.png","/images/logo-3.png","/images/logo-4.png"];
+export default function Trusted() {
   return (
-    <section id="trusted" className="section trusted-section">
-      <div className="container trusted-inner">
-        <div className="trusted-left">
-          <h3 className="section-heading">Trusted by leading brands</h3>
-          <p className="muted">We partner with global teams to ship consistent identity systems.</p>
-        </div>
-        <div className="trusted-right">
-          <div className="logos-grid">
-            {logos.map((l, i)=> <img key={i} src={l} alt={`logo-${i}`} />)}
-          </div>
-        </div>
+    <section className="trusted">
+      {/* Left side */}
+      <div className="trusted-left">
+        <h2>Trusted By</h2>
+        <p>Leading brands we’ve partnered with</p>
+      </div>
+
+      {/* Right side: logo grid */}
+      <div className="logo-grid">
+        <img src="/images/logo1.png" alt="Logo 1" />
+        <img src="/images/logo2.png" alt="Logo 2" />
+        <img src="/images/logo3.png" alt="Logo 3" />
+        <img src="/images/logo4.png" alt="Logo 4" />
+        <img src="/images/logo5.png" alt="Logo 5" />
+        <img src="/images/logo6.png" alt="Logo 6" />
       </div>
     </section>
-  )
+  );
 }
 

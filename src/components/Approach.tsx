@@ -1,37 +1,28 @@
-"use client";
-import React from "react";
-import { motion } from "framer-motion";
-import { fadeUp, stagger } from "../lib/animation";
 import "./approach.css";
 
-export default function Approach(){
+export default function Approach() {
   return (
-    <section id="approach" className="section approach-section">
-      <div className="container">
-        <motion.div initial="hidden" whileInView="show" variants={stagger} viewport={{once:true}}>
-          <motion.h2 variants={fadeUp} className="section-heading">Our Approach</motion.h2>
-          <motion.p variants={fadeUp} className="muted">Where brand integrity meets digital possibility.</motion.p>
+    <section className="approach">
+      <div className="approach-left">
+        <h2 className="section-title">Our <span>Approach</span></h2>
+        <div className="approach-images">
+          <img src="/images/gallery1.jpg" alt="Project 1" className="rect" />
+          <img src="/images/gallery2.jpg" alt="Project 2" className="rect" />
+          <img src="/images/gallery3.jpg" alt="Project 3" className="circle" />
+        </div>
+      </div>
 
-          <div className="approach-cards">
-            <motion.div variants={fadeUp} className="card-curved">
-              <img src="/images/approach-1.jpg" alt="" />
-              <h4>Discovery</h4>
-              <p className="muted small">Research & audit</p>
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="card-curved">
-              <img src="/images/approach-2.jpg" alt="" />
-              <h4>Strategy</h4>
-              <p className="muted small">Positioning & voice</p>
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="card-circle">
-              <img src="/images/approach-circle.jpg" alt="" />
-            </motion.div>
-          </div>
-
-          <a href="#trusted" className="learn-more">Learn more →</a>
-        </motion.div>
+      <div className="approach-right">
+        <h3 className="approach-heading">
+          Where Brands’ Integrity Meets Design
+        </h3>
+        <p className="approach-text">
+          We combine strategy, design, and storytelling to deliver timeless
+          brand identities that resonate across cultures and industries.
+        </p>
+        <a href="/approach" className="approach-link">
+           Learn More About Our Studio →
+        </a>
       </div>
     </section>
   );
