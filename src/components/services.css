@@ -1,74 +1,88 @@
+/* services.css */
 .services {
   background: #f5f5f5;
-  padding: 0rem 2rem;
-}
-
-.services .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  align-items: center;
-  margin-bottom: 4rem;
-}
-
-.services-left h2 {
-  font-size: 1rem;
-  font-weight: 700;
-  padding-top: 5px;
-  margin: 0;
-}
-
-.services-right p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  padding: 0 2rem;
   margin-bottom: 2rem;
-  color: #333;
 }
 
-.view-all {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background: black;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-.view-all:hover {
-  background: #333;
-  transform: translateY(-2px);
-}
-
-/* Service cards grid */
-.services-grid {
+.services-container {
   max-width: 1200px;
+  align-items: flex-start;
+  justify-content: space-between;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.service-card {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
+/* Header split into 3 columns */
+.services-header {
+  display: grid;
+  padding-top: 2rem;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
 }
-.service-card:hover {
-  transform: translateY(-4px);
+
+/* Left column (titles) */
+.services-title {
+  font-size: 1rem;     /* adjust size */
+  font-weight: 700;    /* boldness */
+  color: #000;         /* change color */
 }
-.service-card h3 {
-  margin-top: 0;
-  font-size: 1.25rem;
-  font-weight: 600;
+
+.services-titles {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
 }
-.service-card p {
-  margin-top: 0.5rem;
+.services-titles li {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+/* Middle column (intro + descriptions) */
+.services-intro {
+  margin-bottom: 20px;
+  color: #444;
+  line-height: 1.6;
+}
+.services-descriptions p {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
   color: #555;
-  line-height: 1.4;
+  line-height: 1.5;
+}
+
+/* Right column (btn + thumbs) */
+.services-btn {
+  padding: 4px 24px 4px 4px;
+  background: none;
+    color: black;
+  border: none;
+  border-radius: none;
+  font-weight: 600;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.services-thumbs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.services-thumbs img {
+  width: 100%;
+  max-width: 100px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Subtext row */
+.services-subtext {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
 }
 

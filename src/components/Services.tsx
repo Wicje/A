@@ -1,45 +1,48 @@
+// Services.tsx
 import "./services.css";
 
 export default function Services() {
   return (
     <section className="services">
-      <div className="container">
-        {/* Header split */}
-        <div className="services-left">
-          <h2>Our Services</h2>
-        </div>
+      <div className="services-container">
 
-        <div className="services-right">
-          <p>
-            We deliver multidisciplinary solutions — from brand identity and
-            strategy, to digital products and immersive experiences. Each
-            service is crafted to help ambitious brands thrive in a competitive
-            landscape.
-          </p>
+        {/* Top Row */}
+        <div className="services-header">
+          {/* Left column */}
+          <div className="services-col">
+            <h2 className="services-title">Our Services</h2>
+            <ul className="services-titles">
+              <li>Web Development</li>
+              <li>Brand Identity</li>
+              <li>UI/UX Design</li>
+              <li>SEO & Marketing</li>
+            </ul>
+          </div>
 
-          <a href="/services" className="view-all">
-            View All
-          </a>
-        </div>
-      </div>
+          {/* Middle column */}
+          <div className="services-col">
+            <p className="services-intro">
+              We deliver tailored digital solutions that help businesses grow, 
+              innovate, and succeed in a fast-moving market.
+            </p>
+            <div className="services-descriptions">
+              <p> Responsive, modern websites that drive results.</p>
+              <p> Logos, colors, and strategy that make you memorable.</p>
+              <p>Seamless experiences that delight your users.</p>
+              <p> Boost visibility and attract the right audience.</p>
+            </div>
+          </div>
 
-      {/* Services Grid */}
-      <div className="services-grid">
-        <div className="service-card">
-          <h3>Brand Strategy</h3>
-          <p>Positioning, messaging, and market insights that set you apart.</p>
-        </div>
-        <div className="service-card">
-          <h3>Identity Design</h3>
-          <p>Logos, systems, and visual languages that scale across touchpoints.</p>
-        </div>
-        <div className="service-card">
-          <h3>Digital Products</h3>
-          <p>Websites and apps designed to connect brands with global audiences.</p>
-        </div>
-        <div className="service-card">
-          <h3>Content & Campaigns</h3>
-          <p>Engaging narratives that drive awareness and cultural relevance.</p>
+          {/* Right column */}
+          <div className="services-col">
+            <button className="services-btn">View All</button>
+            <div className="services-thumbs">
+              <img src="/thumb1.png" alt="Service 1" />
+              <img src="/thumb2.png" alt="Service 2" />
+              <img src="/thumb3.png" alt="Service 3" />
+              <img src="/thumb4.png" alt="Service 4" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
