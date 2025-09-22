@@ -18,22 +18,28 @@ export default function Metrics(){
   const b = useCounter(4);
   const c = useCounter(106);
   return (
-    <section className="section metrics-section">
-      <div className="container metrics-inner center">
-        <div className="metric">
-          <div className="metric-val">{a}+</div>
-          <div className="muted">Projects</div>
-        </div>
-        <div className="metric">
-          <div className="metric-val">${b}M</div>
-          <div className="muted">Revenue</div>
-        </div>
-        <div className="metric">
-          <div className="metric-val">{c}</div>
-          <div className="muted">Clients</div>
-        </div>
+    <section className="metrics">
+  <div className="metrics-container">
+    <div className="metrics-grid">
+      <div className="metric">
+        <div className="metric-number">106</div>
+        <div className="metric-label">Projects Completed</div>
       </div>
-    </section>
+      <div className="metric">
+        <div className="metric-number">08</div>
+        <div className="metric-label">Years of Experience</div>
+      </div>
+      <div className="metric">
+        <div className="metric-number">60+</div>
+        <div className="metric-label">Clients Worldwide</div>
+      </div>
+      <div className="metric">
+        <div className="metric-number">$4M</div>
+        <div className="metric-label">Value Generated</div>
+      </div>
+    </div>
+  </div>
+</section>
   )
 }
 

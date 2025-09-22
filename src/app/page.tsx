@@ -6,6 +6,7 @@ import Hero from "../components/Hero";
 import Approach from "../components/Approach";
 import Trusted from "../components/Trusted";
 import Services from "../components/Services";
+import Metrics from "../components/Metrics";
 import CaseStudies from "../components/CaseStudies";
 import "./globals.css";
 
@@ -41,6 +42,8 @@ export default function Page() {
         <Approach />
         <Trusted />
 <Services />
+         <Metrics />
+
 
         <CaseStudies />
       </main>

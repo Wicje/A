@@ -1,5 +1,33 @@
-.metrics-inner{display:flex;gap:48px;justify-content:center;align-items:center}
-.metric{display:flex;flex-direction:column;align-items:center}
-.metric-val{font-size:2rem;font-weight:800}
-@media (max-width:880px){ .metrics-inner{flex-direction:column;gap:20px} }
+.metrics {
+  background: #fff;
+  padding: 6rem 2rem;
+  margin: 6rem auto;
+}
+
+.metrics-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Metrics Grid: 4 columns in one row */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: left; /* left-aligned like in the ref */
+}
+
+.metric-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  color: #000;
+}
+
+.metric-label {
+  font-size: 0.95rem;
+  color: #555;
+}
 
