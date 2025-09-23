@@ -1,5 +1,93 @@
-.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:16px}
-.case-card img{width:100%;height:240px;object-fit:cover;border-radius:10px}
-.case-card h4{margin:10px 0 6px}
-@media (max-width:880px){ .case-grid{grid-template-columns:1fr} }
+.case-studies {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #f5f5f5;
+}
+
+/* Row 1: Title + discover */
+.case-studies-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Title narrower, text wider */
+  align-items: start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.case-studies-header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.case-studies-header p {
+  font-size: 1rem;
+  color: black;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px; /* constrain so it doesn’t spill into case study image */
+}
+
+.case-studies-header h3 {
+font-size: 1rem;
+color: #555;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* Row 2: Logo + brand name */
+.case-studies-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.case-studies-brand img {
+  width: 50px;
+  height: auto;
+  object-fit: contain;
+}
+
+.case-studies-brand span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Row 3: Case study highlight */
+.case-studies-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.case-studies-text h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.case-studies-text p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.case-studies-text a {
+  font-weight: 600;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.case-studies-text a:hover {
+  text-decoration: underline;
+}
+
+.case-studies-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
 
