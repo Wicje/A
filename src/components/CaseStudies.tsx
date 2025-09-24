@@ -19,14 +19,15 @@ export default function CaseStudies() {
     <span>Brand Name</span>
   </div>
 
-  {/* Row 3: Highlight + image */}
+  {/* Row 3i: Highlight + image */}
   <div className="case-studies-content">
     <div className="case-studies-text">
           <p>Best case study 2024</p>
-      <h3>Enlighten. Branding and Package Design</h3>
+      <h3>Enlighten Branding and Package Design</h3>
       <p>
-        We partnered with Brand X to reinvent their digital presence and
-        unlock exponential growth in their category.
+        We partnered with ArchStack to reinvent their digital presence and
+        unlock exponential growth in their category. And this lead to over 
+        100x Pace improvement in Seo optimization and leads Generation
       </p>
       <a href="/case-studies/brand-x">View Case Study →</a>
     </div>

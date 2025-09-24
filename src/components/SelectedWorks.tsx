@@ -1,44 +1,49 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 import "./selected-works.css";
 
-/**
- * SelectedWorks.tsx
- * Self-contained, production-ready selected works section.
- *
- * Usage:
- *  import SelectedWorks from './components/SelectedWorks';
- *  ...
- *  <SelectedWorks />
- *
- * Replace placeholder image URLs with your real images in /public or CDN.
- */
+type WorkImage = {
+  src: string;
+  title: string;
+  category: string;
+};
 
+type Work = {
+  title: string;
+  images: WorkImage[];
+};
 
-
-const works = [
+const works: Work[] = [
   {
     title: "Brand Strategy",
-    description: "Crafting powerful positioning and unique narratives.",
-    image: "/images/work1.jpg",
+    images: [
+      { src: "/images/work1a.jpg", title: "Fintech Rebrand", category: "Fintech" },
+      { src: "/images/work1b.jpg", title: "Mobile App UI", category: "App Design" },
+      { src: "/images/work1c.jpg", title: "Startup Identity", category: "Branding" },
+    ],
   },
   {
     title: "Visual Identity",
-    description: "Design systems that elevate brand recognition.",
-    image: "/images/work2.jpg",
+    images: [
+      { src: "/images/work2a.jpg", title: "Luxury Logo", category: "Logo Design" },
+      { src: "/images/work2b.jpg", title: "E-commerce Store", category: "E-Commerce" },
+      { src: "/images/work2c.jpg", title: "Packaging Concept", category: "Packaging" },
+    ],
   },
   {
     title: "Web Design",
-    description: "Modern, scalable, responsive digital experiences.",
-    image: "/images/work3.jpg",
+    images: [
+      { src: "/images/work3a.jpg", title: "Portfolio Website", category: "Creative" },
+      { src: "/images/work3b.jpg", title: "SaaS Landing Page", category: "SaaS" },
+      { src: "/images/work3c.jpg", title: "Corporate Site", category: "Enterprise" },
+    ],
   },
 ];
 
 const SelectedWorks: React.FC = () => {
   return (
     <section className="selected-works">
-      {/* Top Header Row */}
+      {/* Header */}
       <div className="selected-works-header">
         <h2>Selected Works</h2>
         <p>
@@ -51,26 +56,31 @@ const SelectedWorks: React.FC = () => {
 
       <hr className="divider" />
 
-      {/* Works List */}
+      {/* Work Rows */}
       <div className="works-list">
         {works.map((work, index) => (
           <div key={index} className="work-row">
-            {/* Left Column Title + Description */}
+            {/* Left Column */}
             <div className="work-text">
               <h3>{work.title}</h3>
             </div>
 
-            {/* Right Column Image */}
-            <div className="work-image">
-              <img src={work.image} alt={work.title} />
-              <p>{work.description}</p>
+            {/* Right Column → Masonry Image Grid */}
+            <div className="work-images-grid">
+              {work.images.map((img, idx) => (
+                <div key={idx} className="work-image-card">
+                  <img src={img.src} alt={img.title} />
+                  <h4>{img.title}</h4>
+                  <span>{img.category}</span>
+                </div>
+              ))}
             </div>
+
+            {/* Divider per row */}
+            <hr className="divider full-width" />
           </div>
         ))}
       </div>
- <hr className="divider" />
-
-
     </section>
   );
 };

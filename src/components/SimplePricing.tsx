@@ -7,8 +7,11 @@ import "./SimplePricing.css";
 const SimplePricing: React.FC = () => {
   return (
     <section className="simple-pricing">
+      <div className="pricing-header">
       <h2>Simple Pricing</h2>
       <p className="subtitle">Straightforward plans tailored to your needs.</p>
+      <p className= "end">For Teams and Personal</p>
+      </div>
 
       <div className="pricing-cards">
         {/* Card 1 */}

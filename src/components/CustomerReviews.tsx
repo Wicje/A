@@ -28,7 +28,11 @@ const reviews = [
 const CustomerReviews: React.FC = () => {
   return (
     <section className="customer-reviews">
+      <div className="review-header">
       <h2>Customer Reviews</h2>
+        <p>Real stories from real customers. See what they are saying</p>
+        <h3>01/08 Reviews</h3>
+      </div>
       <div className="reviews-grid">
         {reviews.map((review, index) => (
           <div key={index} className="review-card">

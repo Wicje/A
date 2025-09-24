@@ -2,7 +2,7 @@
   padding: 6rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  background: #f5f5f5;
+  background: #fff;
 }
 
 /* Row 1: Title + discover */
@@ -22,6 +22,7 @@
 
 .case-studies-header p {
   font-size: 1rem;
+  font-weight: 700;
   color: black;
   line-height: 1.6;
   margin: 0;
@@ -66,7 +67,8 @@ color: #555;
 .case-studies-text h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .case-studies-text p {
@@ -87,7 +89,8 @@ color: #555;
 
 .case-studies-image img {
   width: 100%;
-  height: auto;
+  justify-self: end;
+  height: 500px;
   border-radius: 8px;
   object-fit: cover;
 }

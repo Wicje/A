@@ -6,7 +6,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 3rem;
+  padding: 0 2rem;
+  margin: 0 2rem;
   background: transparent;
   z-index: 1000;
   transition: transform 0.35s ease;
@@ -26,6 +27,7 @@
 .brand-name {
   font-weight: 700;
   font-size: 1.1rem;
+  color: white;
   letter-spacing: 0.5px;
 }
 
@@ -40,6 +42,7 @@
 
 .header-time {
   font-weight: 600;
+  color: white;
 }
 
 .header-location {
@@ -51,6 +54,7 @@
   border: none;
   background: none;
   font-weight: 600;
+  color: white;
   font-size: 1rem;
   cursor: pointer;
 }
