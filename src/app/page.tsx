@@ -8,6 +8,9 @@ import Trusted from "../components/Trusted";
 import Services from "../components/Services";
 import Metrics from "../components/Metrics";
 import CaseStudies from "../components/CaseStudies";
+import SelectedWorks from "../components/SelectedWorks";
+import CustomerReviews from "@/components/CustomerReviews";
+import SimplePricing from "@/components/SimplePricing";
 import "./globals.css";
 
 export default function Page() {
@@ -46,6 +49,9 @@ export default function Page() {
 
 
         <CaseStudies />
+        <SelectedWorks />
+        <CustomerReviews />
+        <SimplePricing />
       </main>
     </>
   );

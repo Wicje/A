@@ -1,0 +1,76 @@
+.selected-works {
+  padding: 0rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.selected-works-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding-top: 2rem;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.selected-works-header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.selected-works-header p {
+  flex: 1;
+  margin: 0 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+}
+
+.view-all {
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  justify-self: end;
+  text-decoration: underline;
+  border: 1px solid black;
+  padding: 0.5rem 1.5rem;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
+}
+
+.works-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.work-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.work-text h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 0rem;
+}
+
+.work-text p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+.work-image img {
+  width: 180px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+

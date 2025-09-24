@@ -1,0 +1,47 @@
+.customer-reviews {
+  padding: 6rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.customer-reviews h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.review-card {
+  border: 1px solid #ddd;
+  padding: 2rem;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+}
+
+.name {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.role {
+  color: #666;
+}
+
