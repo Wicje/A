@@ -2,36 +2,31 @@
 import React from "react";
 import "./footer.css";
 
-export default function Footer(){
+const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <div className="container footer-inner">
-        <div className="footer-cta">
-          <h2 className="cta">Let's work together.</h2>
-          <p className="muted">Get in touch to start your project.</p>
+      <div className="footer-top">
+        <div className="footer-brand">
+          <h2>CODOT®</h2>
+          <p>contact@codot.com</p>
         </div>
-
         <div className="footer-links">
-          <div className="footer-col">
-            <h4>Studio</h4>
-            <a>About</a>
-            <a>Work</a>
-          </div>
-          <div className="footer-col">
-            <h4>Contact</h4>
-            <a>hello@studio.example</a>
-            <a>+234 800 000 000</a>
-          </div>
-          <div className="footer-col">
-            <h4>Social</h4>
-            <a>X</a>
-            <a>Instagram</a>
-          </div>
+          <a href="/works">Works</a>
+          <a href="/about">About</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/faq">FAQ</a>
         </div>
-
-        <div className="arch-note muted">Dev stack: React + TypeScript + Framer Motion • Dev OS: Arch Linux</div>
+        <div className="footer-info">
+          <p>Yogyakarta, Indonesia</p>
+          <p>Mon – Fri, 9am – 6pm</p>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>© {new Date().getFullYear()} Codot. All Rights Reserved.</p>
       </div>
     </footer>
-  )
-}
+  );
+};
+
+export default Footer;
 

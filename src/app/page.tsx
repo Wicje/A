@@ -11,7 +11,10 @@ import CaseStudies from "../components/CaseStudies";
 import SelectedWorks from "../components/SelectedWorks";
 import CustomerReviews from "@/components/CustomerReviews";
 import SimplePricing from "@/components/SimplePricing";
+import FAQ from "@/components/FAQ";
+import BookCall from "@/components/BookCall";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 export default function Page() {
   const [scrollUp, setScrollUp] = useState(true);
@@ -52,6 +55,9 @@ export default function Page() {
         <SelectedWorks />
         <CustomerReviews />
         <SimplePricing />
+        <FAQ />
+        <BookCall />
+        <Footer />
       </main>
     </>
   );
