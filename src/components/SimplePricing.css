@@ -1,13 +1,31 @@
 .simple-pricing {
-  padding: 6rem 4rem;
+  padding: 0 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   text-align: center;
 }
 
+.simple-pricing .pricing-header {
+display: flex;
+margin-bottom: 2rem;
+grid-template-rows: 1fr 1fr 1fr;
+align-items: center;
+justify-content: space-between;
+
+}
+
 .simple-pricing h2 {
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.simple-pricing p {
+margin: 0;
+font-weight: 500;
+font-size: 1rem;
+justify-self: center;
 }
 
 .subtitle {
@@ -16,10 +34,14 @@
   color: #555;
 }
 
+.simple-pricing .pricing-header .end {
+font-weight: 700;
+}
+
 .pricing-cards {
  display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .pricing-card {

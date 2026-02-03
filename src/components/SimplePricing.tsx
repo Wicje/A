@@ -13,7 +13,7 @@ const SimplePricing: React.FC = () => {
       <p className= "end">For Teams and Personal</p>
       </div>
 
-      <div className="pricing-cards">
+     <div className="pricing-cards">
         {/* Card 1 */}
         <div className="pricing-card">
           <h3>Custom Project</h3>
