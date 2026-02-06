@@ -1,15 +1,16 @@
 /* Hero wrapper */
 .hero {
-  max-width: 100%;
-  display: grid;
-  align-items: start;
+  /*max-width: 1200px;
   margin: 0 auto;
+  background: #f5f5f5;
+  padding: 6rem 2rem; */
+  background:#f5f5f5;
 }
 
 /* Top hero image section */
 .hero-image {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh; /* full screen height */
   overflow: hidden;
 }
@@ -22,7 +23,6 @@
 
 .hero-title {
   position: absolute;
-  bottom: 1.5rem; /* push it near bottom */
   left: 50%;
   bottom: -30%;
   transform: translateX(-50%);
@@ -35,11 +35,12 @@
 
 /* Bottom logo + writeup */
 .hero-content {
-  max-width: 1200px;
   display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
   justify-content: space-between;
-  align-items: start;
-  padding: 2rem 2rem;
+  align-items: center;
 }
 
 .hero-logo img {
