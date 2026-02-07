@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import "./services.css";
 
 export default function Services() {
@@ -25,9 +27,20 @@ export default function Services() {
   ];
 
   return (
-    <section className="services">
+    <motion.section 
+    className="services"
+    initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true, margin: "-100px" }}
+  >
       <div className="services-container">
-        <div className="services-header">
+        <motion.div 
+        className="services-header"
+        initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  >
           {/* Left Top Title */}
           <h2 className="services-title">Our Services</h2>
 
@@ -39,22 +52,48 @@ export default function Services() {
 
           {/* Right Top Button */}
           <button className="services-btn">View All</button>
-        </div>
+        </motion.div>
 
         {/* Service Rows */}
-        <div className="services-rows">
+        <motion.div 
+        className="services-rows"
+         initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={{
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  }}
+  >
           {services.map((service, i) => (
-            <div className="service-row" key={i}>
+            <motion.div 
+            className="service-row" 
+            key={i}
+  variants={{
+    hidden: { opacity: 0, y: 16 },
+    visible: { opacity: 1, y: 0 },
+  }}
+  transition={{ duration: 0.4, ease: "easeOut" }}
+  >
               <div className="service-title">{service.title}</div>
               <div className="service-description">{service.description}</div>
-              <div className="service-image">
+              <motion.div 
+              className="service-image"
+              initial={{ opacity: 0, x: 20 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.4, delay: 0.1 }}
+  >
                 <img src={service.image} alt={service.title} />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

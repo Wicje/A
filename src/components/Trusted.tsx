@@ -98,7 +98,7 @@ export default function Trusted() {
   whileHover={{ y: -2 }}
   transition={{ duration: 0.3, ease: "easeOut" }}
   />
-      </div>
+      </motion.div>
     </motion.section>
   );
 }
