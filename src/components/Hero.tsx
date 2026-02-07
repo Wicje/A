@@ -1,4 +1,7 @@
+"use client";
+import { motion } from "framer-motion";
 import "./hero.css";
+
 
 export default function Hero() {
   return (
@@ -6,11 +9,20 @@ export default function Hero() {
       {/* Hero Image */}
       <div className="hero-image">
         <img src="/hero-bg.jpg" alt="Hero background" />
-        <h1 className="hero-title">ENLiGHTN®</h1>
+        <h1 className="hero-title">
+        ENLiGHTN®
+        </h1>
       </div>
 
       {/* Below Hero - Logo & Write-up */}
-      <div className="hero-content">
+      <motion.div 
+      className="hero-content"
+       initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, margin: "-100px" }}
+  transition={{ duration: 0.9, ease: "easeOut" }}
+      >
+
         <div className="hero-logo">
           <img src="/logo.svg" alt="Codot logo" />
         </div>
@@ -21,7 +33,7 @@ export default function Hero() {
             ambitious brands — blending local insights with global perspectives.
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
