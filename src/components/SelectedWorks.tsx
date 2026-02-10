@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import "./selected-works.css";
 
 type WorkImage = {
@@ -42,9 +43,23 @@ const works: Work[] = [
 
 const SelectedWorks: React.FC = () => {
   return (
-    <section className="selected-works">
+    
+<motion.section
+  className="selected-works"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true, margin: "-120px" }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
       {/* Header */}
-      <div className="selected-works-header">
+      
+<motion.div
+  className="selected-works-header"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
         <h2>Selected Works</h2>
         <p>
           Showcasing our portfolio of creative solutions that drive real impact.
@@ -52,36 +67,102 @@ const SelectedWorks: React.FC = () => {
         <a href="/works" className="view-all">
           View All
         </a>
-      </div>
+      </motion.div>
 
-      <hr className="divider" />
+     
+<motion.hr
+  className="divider"
+  initial={{ scaleX: 0 }}
+  whileInView={{ scaleX: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, ease: "easeOut" }}
+  style={{ transformOrigin: "left" }}
+/>
 
       {/* Work Rows */}
-      <div className="works-list">
+      
+<motion.div
+  className="works-list"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={{
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }}
+>
+
         {works.map((work, index) => (
-          <div key={index} className="work-row">
+          
+<motion.div
+  key={index}
+  className="work-row"
+  variants={{
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  }}
+>
             {/* Left Column */}
-            <div className="work-text">
+            
+<motion.div
+  className="work-text"
+  variants={{
+    hidden: { opacity: 0, x: -30 },
+    visible: { opacity: 1, x: 0 },
+  }}
+  transition={{ duration: 0.5, ease: "easeOut" }}
+>
+
               <h3>{work.title}</h3>
-            </div>
+            </motion.div>
 
             {/* Right Column → Masonry Image Grid */}
-            <div className="work-images-grid">
+            
+<motion.div
+  className="work-images-grid"
+  variants={{
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  }}
+>
               {work.images.map((img, idx) => (
-                <div key={idx} className="work-image-card">
-                  <img src={img.src} alt={img.title} />
-                  <h4>{img.title}</h4>
-                  <span>{img.category}</span>
-                </div>
+                
+<motion.div
+  key={idx}
+  className="work-image-card"
+  variants={{
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  }}
+  transition={{ duration: 0.4, ease: "easeOut" }}
+>
+  <img src={img.src} alt={img.title} />
+  <h4>{img.title}</h4>
+  <span>{img.category}</span>
+</motion.div> 
               ))}
-            </div>
+            </motion.div>
 
             {/* Divider per row */}
-            <hr className="divider full-width" />
-          </div>
+           
+<motion.hr
+  className="divider full-width"
+  initial={{ scaleX: 0 }}
+  whileInView={{ scaleX: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.4, ease: "easeOut" }}
+  style={{ transformOrigin: "left" }}
+/>
+          </motion.div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 
