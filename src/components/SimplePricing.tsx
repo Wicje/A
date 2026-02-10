@@ -1,21 +1,52 @@
 // src/components/SimplePricing.tsx
 "use client";
-
+import { motion } from "framer-motion";
 import React from "react";
 import "./SimplePricing.css";
 
 const SimplePricing: React.FC = () => {
   return (
-    <section className="simple-pricing">
-      <div className="pricing-header">
+<motion.section
+  className="simple-pricing"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true, margin: "-100px" }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
+<motion.div
+  className="pricing-header"
+  initial={{ opacity: 0, y: 24 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
       <h2>Simple Pricing</h2>
       <p className="subtitle">Straightforward plans tailored to your needs.</p>
       <p className= "end">For Teams and Personal</p>
-      </div>
+      </motion.div>
 
-     <div className="pricing-cards">
+<motion.div
+  className="pricing-cards"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={{
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  }}
+>
         {/* Card 1 */}
-        <div className="pricing-card">
+<motion.div
+  className="pricing-card"
+  variants={{
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  }}
+  transition={{ duration: 0.5, ease: "easeOut" }}
+>
           <h3>Custom Project</h3>
           <p className="price">$990.00</p>
           <ul>
@@ -24,10 +55,17 @@ const SimplePricing: React.FC = () => {
             <li>Up to 5 revisions</li>
           </ul>
           <button className="pricing-btn">Get Started</button>
-        </div>
+        </motion.div>
 
         {/* Card 2 */}
-        <div className="pricing-card featured">
+<motion.div
+  className="pricing-card featured"
+  variants={{
+    hidden: { opacity: 0, y: 30, scale: 0.96 },
+    visible: { opacity: 1, y: 0, scale: 1 },
+  }}
+  transition={{ duration: 0.55, ease: "easeOut" }}
+>
           <h3>Premium Package</h3>
           <p className="price">$1,049</p>
           <ul>
@@ -36,9 +74,9 @@ const SimplePricing: React.FC = () => {
             <li>Dedicated project manager</li>
           </ul>
           <button className="pricing-btn">Book Now</button>
-        </div>
-      </div>
-    </section>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 };
 
