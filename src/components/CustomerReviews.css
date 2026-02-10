@@ -33,10 +33,26 @@ color: black;
   justify-self: end;
 }
 
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+.reviews-marquee {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.reviews-track {
+  display: flex;
   gap: 2rem;
+  width: max-content;
+}
+
+.review-card {
+  min-width: 320px; /* VERY important */
+  flex-shrink: 0;   /* prevents squishing */
+  border: 1px solid #ddd;
+  padding: 2rem;
+  border-radius: 7px;
+  background: #fff;
 }
 
 .review-card {
