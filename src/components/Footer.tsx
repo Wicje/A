@@ -1,30 +1,81 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import "./footer.css";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer">
-      <div className="footer-top">
-        <div className="footer-brand">
+    <motion.footer
+      className="footer"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <motion.div
+        className="footer-top"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          visible: {
+            transition: { staggerChildren: 0.12 },
+          },
+        }}
+      >
+        <motion.div
+          className="footer-brand"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
           <h2>ENLIGHTEN®</h2>
           <p>contact@enlighten.com</p>
-        </div>
-        <div className="footer-links">
-          <a href="/works">Works</a>
-          <a href="/about">About</a>
-          <a href="/pricing">Pricing</a>
-          <a href="/faq">FAQ</a>
-        </div>
-        <div className="footer-info">
-          <p>Nsukkaa, Nigeria</p>
+        </motion.div>
+
+        <motion.div
+          className="footer-links"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
+          <motion.a href="/works" whileHover={{ y: -2 }}>
+            Works
+          </motion.a>
+          <motion.a href="/about" whileHover={{ y: -2 }}>
+            About
+          </motion.a>
+          <motion.a href="/pricing" whileHover={{ y: -2 }}>
+            Pricing
+          </motion.a>
+          <motion.a href="/faq" whileHover={{ y: -2 }}>
+            FAQ
+          </motion.a>
+        </motion.div>
+
+        <motion.div
+          className="footer-info"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
+          <p>Nsukka, Nigeria</p>
           <p>Mon – Fri, 9am – 6pm</p>
-        </div>
-      </div>
-      <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} Codot. All Rights Reserved.</p>
-      </div>
-    </footer>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="footer-bottom"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+      >
+        <p>© {new Date().getFullYear()} Enlighten. All Rights Reserved.</p>
+      </motion.div>
+    </motion.footer>
   );
 };
 

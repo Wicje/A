@@ -1,8 +1,9 @@
-"use client";
-import React, { useState } from "react";
-import "./FAQ.css";
+  "use client";
+  import React, { useState } from "react";
+  import { motion, AnimatePresence } from "framer-motion";
+  import "./FAQ.css";
 
-const faqs = [
+  const faqs = [
   {
     q: "What services do you offer?",
     a: "We provide branding, visual identity, and website design tailored for ambitious businesses."
@@ -19,9 +20,9 @@ const faqs = [
     q: "How do I get started?",
     a: "Simply book a call with us — we’ll review your goals and propose the right plan."
   }
-];
+  ];
 
-const FAQ: React.FC = () => {
+  const FAQ: React.FC = () => {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
@@ -29,22 +30,39 @@ const FAQ: React.FC = () => {
       <h2>Frequently Asked Questions</h2>
       <div className="faq-list">
         {faqs.map((item, i) => (
-          <div
-            key={i}
-            className={`faq-item ${open === i ? "open" : ""}`}
-            onClick={() => setOpen(open === i ? null : i)}
-          >
-            <div className="faq-q">
+          
+  <motion.div
+  key={i}
+  className={`faq-item ${open === i ? "open" : ""}`}
+  onClick={() => setOpen(open === i ? null : i)}
+  initial={false}
+  >
+  <motion.div
+  className="faq-q"
+  whileTap={{ scale: 0.98 }}
+  >
               <span>{item.q}</span>
               <span>{open === i ? "−" : "+"}</span>
-            </div>
-            {open === i && <div className="faq-a"><p>{item.a}</p></div>}
-          </div>
+           </motion.div>
+  <AnimatePresence>
+  {open === i && (
+    <motion.div
+      className="faq-a"
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height: "auto", opacity: 1 }}
+      exit={{ height: 0, opacity: 0 }}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+    >
+      <p>{item.a}</p>
+    </motion.div>
+  )}
+  </AnimatePresence>
+          </motion.div>
         ))}
       </div>
     </section>
   );
-};
+  };
 
-export default FAQ;
+  export default FAQ;
 
