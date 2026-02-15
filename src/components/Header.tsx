@@ -40,43 +40,45 @@ export default function Header() {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <>
-      <header className="header">
-        <div className="header-left">
-          <img src="/logo.svg" alt="Logo" className="logo" />
-          <span className="brand-name">ENLIGHTEN</span>
-        </div>
+return (
+  <>
+    <header className="header">
+      <div className="header-left">
+        <img src="/logo.svg" alt="Logo" className="logo" />
+        <span className="brand-name">ENLIGHTEN</span>
+      </div>
 
-        <div className="header-center">
-          <span className="header-time">{date}</span>
-          <span className="header-location">{location}</span>
-        </div>
+      <div className="header-center">
+        <span className="header-time">{date}</span>
+        <span className="header-location">{location}</span>
+      </div>
 
-        <div className="header-right">
-          <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
-            MENU
-          </button>
-        </div>
-      </header>
+      <div className="header-right">
+        <button
+          className="menu-btn"
+          onClick={() => setMenuOpen(true)}
+        >
+          MENU
+        </button>
+      </div>
+    </header>
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            className="dropdown"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            <a href="#works">Works</a>
-            <a href="#about">About</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
-  );
+    <div className={`menu-overlay ${menuOpen ? "active" : ""}`}>
+      <button
+        className="close-btn"
+        onClick={() => setMenuOpen(false)}
+      >
+        ✕
+      </button>
+
+      <ul>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </>
+);
 }
