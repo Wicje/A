@@ -22,23 +22,41 @@ export default function Header() {
     const interval = setInterval(updateDate, 60000);
 
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(async (position) => {
-        const { latitude, longitude } = position.coords;
+navigator.geolocation.getCurrentPosition(
+  async (position) => {
+    const { latitude, longitude } = position.coords;
 
-        try {
-          const res = await fetch(
-            `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
-          );
-          const data = await res.json();
-          setLocation(data.city || data.locality || "Unknown");
-        } catch {
-          setLocation("Location unavailable");
-        }
-      });
+    try {
+      const res = await fetch(
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+      );
+      const data = await res.json();
+      setLocation(data.city || data.locality || "Unknown");
+    } catch {
+      setLocation("Location unavailable");
+    }
+  },
+  () => {
+    setLocation("Lagos"); // fallback
+  }
+);
     }
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+  if (menuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [menuOpen]);
+
 
 return (
   <>
