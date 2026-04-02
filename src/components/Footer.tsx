@@ -7,8 +7,8 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer-top">
         <div className="footer-brand">
-          <h2>CODOT®</h2>
-          <p>contact@codot.com</p>
+          <h2>ENLIGHTEN®</h2>
+          <p>contact@enlighten.com</p>
         </div>
         <div className="footer-links">
           <a href="/works">Works</a>
@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
           <a href="/faq">FAQ</a>
         </div>
         <div className="footer-info">
-          <p>Yogyakarta, Indonesia</p>
+          <p>Nsukkaa, Nigeria</p>
           <p>Mon – Fri, 9am – 6pm</p>
         </div>
       </div>

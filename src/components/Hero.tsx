@@ -6,7 +6,7 @@ export default function Hero() {
       {/* Hero Image */}
       <div className="hero-image">
         <img src="/hero-bg.jpg" alt="Hero background" />
-        <h1 className="hero-title">LiGHTN®</h1>
+        <h1 className="hero-title">ENLiGHTN®</h1>
       </div>
 
       {/* Below Hero - Logo & Write-up */}
@@ -17,7 +17,7 @@ export default function Hero() {
         <div className="hero-text">
           <p>
             We are a multidisciplinary design studio rooted in the cultural
-            heart of Yogyakarta. Our passion is to craft visionary solutions for
+            heart of Nsukka. Our passion is to craft visionary solutions for
             ambitious brands — blending local insights with global perspectives.
           </p>
         </div>

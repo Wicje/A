@@ -6,7 +6,6 @@ const BookCall: React.FC = () => {
   return (
     <section className="book-call">
       <h2>Book A Call</h2>
-      <h2>Book A Call</h2>
     </section>
   );
 };
